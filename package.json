@@ -1,0 +1,20 @@
+{ "name" :  "transcode-server"
+, "description" : "Image/Video Transcoding Server"
+, "version" : "0.0.1"
+, "author": "Evan Owen <kainosnoema@gmail.com>"
+, "dependencies":
+  { 
+    "express":        "2.5.x"
+  , "cluster":        "0.7.x"
+  , "kue":            "0.3.x"
+  , "async":          "0.1.x"
+  , "gm":             "https://github.com/kainosnoema/gm/tarball/feature/autoOrient"
+  , "cloudfiles":     "0.3.1"
+  }
+, "devDependencies":
+  { "vows":       "*" }
+, "private" : true
+, "repository" :    { "type" :  "git"
+                    , "url" :   "http://github.com/kainosnoema/node-transcode-server.git" }
+, "engines" :       { "node" : ">=0.4.6" }
+}
