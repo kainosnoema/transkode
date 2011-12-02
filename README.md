@@ -1,4 +1,4 @@
-# node-transcode-server
+# node-transcoder
 
 One-stop-shop for transcoding all your images and videos.
 
