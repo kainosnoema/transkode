@@ -6,9 +6,11 @@
   { 
     "express":        "2.5.x"
   , "cluster":        "0.7.x"
+  , "redis":          "0.7.x"
   , "kue":            "0.3.x"
   , "async":          "0.1.x"
   , "gm":             "https://github.com/kainosnoema/gm/tarball/feature/autoOrient"
+  , "mkdirp":         "0.2.x"
   , "cloudfiles":     "0.3.1"
   }
 , "devDependencies":
