@@ -1,4 +1,5 @@
 var cluster = require('cluster')
+  , config = require('./lib/config')
   , worker = require('./lib/worker');
 
 cluster = cluster()
