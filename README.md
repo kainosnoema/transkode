@@ -1,10 +1,15 @@
 # node-transcoder
 
-One-stop-shop for transcoding all your images and videos.
+Redis-backed (queued) transcoding server for images and video (coming).
 
 ## Is it any good?
 
-No. This is currently just an experiment, and won't be production ready for awhile.
+No. This is just an experiment and is NOT production ready.
+
+## Dependancies
+
+- Redis
+- GraphicsMagick
 
 ## Proposed Usage
 
@@ -20,13 +25,15 @@ POST http://localhost:3456/jobs/(image|video)
   }
 , "outputs": [
     {
-      "resize": {
-        "width": 400
-      , "height": 200
-      , "strategy": "crop"
+      "processors": {
+        "resize": {
+          "width": 400
+        , "height": 200
+        , "strategy": "crop"
+        }
+      , "blur": 10
+      , "quality": 80
       }
-    , "blur": 10
-    , "quality": 80
     , "cloudfiles": {
         "container": "..."
       , "name": "profile_images/new/400.jpg"
@@ -34,32 +41,38 @@ POST http://localhost:3456/jobs/(image|video)
     , "postback": "new-400.jpg"
     }
   , {
-      "resize": {
-        "width": 200
-      , "height": 100
-      , "strategy": "crop"
+      "processors": {
+        "resize": {
+          "width": 200
+        , "height": 100
+        , "strategy": "crop"
+        }
+      , "quality": 70
       }
-    , "quality": 70
     , "local": "./test/images/new-200.jpg"
     , "postback": "new-200.jpg"
     }
   , {
-      "resize": {
-        "width": 50
-      , "height": 50
-      , "strategy": "crop"
+      "processors": {
+        "resize": {
+          "width": 50
+        , "height": 50
+        , "strategy": "crop"
+        }
+      , "quality": 70
       }
-    , "quality": 70
     , "local": "./test/images/new-50.jpg"
     , "postback": "new-50.jpg"
     }
   , {
-      "resize": {
-        "width": 20
-      , "height": 20
-      , "strategy": "crop"
+      "processors": {
+        "resize": {
+          "width": 20
+        , "height": 20
+        , "strategy": "crop"
+        }
+      , "quality": 70
       }
-    , "quality": 70
     , "local": "./test/images/new-10.jpg"
     , "postback": "new-10.jpg"
     }
