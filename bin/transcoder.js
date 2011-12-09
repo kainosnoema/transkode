@@ -14,6 +14,7 @@ cli.parse({
 
 cli.main(function (args, options) {
   var cluster = require('cluster')
+    , utils  = require('../lib/utils')
     , config = require('../lib/config')
     , worker = require('../lib/worker');
 
@@ -26,7 +27,7 @@ cli.main(function (args, options) {
     var port = options.port
       , master = require('../lib/master');
     master.on('listening', function() {
-      "Transcoder web UI listening at 127.0.0.1:" + port;
+      utils.log.info("Web UI listening at 127.0.0.1:" + port);
     });
     master.listen(port);
   } else {
