@@ -12,10 +12,13 @@
   , "gm":             "https://github.com/kainosnoema/gm/tarball/feature/autoOrient"
   , "mkdirp":         "0.2.x"
   , "cloudfiles":     "0.3.1"
+  , "cli":            "0.3.x"
   }
 , "devDependencies":
   { "vows":       "*" }
 , "repository" :    { "type" :  "git"
                     , "url" :   "http://github.com/kainosnoema/node-transcoder.git" }
+, "main": "index"
+, "bin": { "transcoder": "./bin/transcoder.js" }
 , "engines" :       { "node" : ">=0.4.6" }
 }
