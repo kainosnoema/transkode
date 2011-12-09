@@ -1,6 +1,6 @@
 { "name" :  "transcoder"
 , "description" : "Image/Video Transcoding Server"
-, "version" : "0.0.1"
+, "version" : "0.0.2"
 , "author": "Evan Owen <kainosnoema@gmail.com>"
 , "dependencies":
   { 
@@ -15,7 +15,6 @@
   }
 , "devDependencies":
   { "vows":       "*" }
-, "private" : true
 , "repository" :    { "type" :  "git"
                     , "url" :   "http://github.com/kainosnoema/node-transcoder.git" }
 , "engines" :       { "node" : ">=0.4.6" }
