@@ -7,16 +7,20 @@ var cli = require('cli').enable('version').setApp(__dirname + '/../package.json'
 
 cli.parse({
     port:     ['p', 'Port number to listen on', 'number', 4422]
-  , config:   ['c', 'Path to config.json file']
+  , config:   ['c', 'Path to config file', 'string']
   , workers:  ['w', 'Number of workers to spawn', 'number']
   , env:      ['e', 'Server environment', 'string', process.env.NODE_ENV || 'development']
 }, []);
 
 cli.main(function (args, options) {
   var cluster = require('cluster')
-    , utils  = require('../lib/utils')
-    , config = require('../lib/config')
-    , worker = require('../lib/worker');
+    , utils   = require('../lib/utils')
+    , config  = require('../lib/config')
+    , worker  = require('../lib/worker');
+
+  if(options.config) {
+    process.env.TRANSCODER_CONFIG_PATH = normalizeFilePath(options.config);
+  }
 
   cluster = cluster()
     .set('workers', options.workers || 4)
@@ -36,3 +40,8 @@ cli.main(function (args, options) {
       .start();
   }
 });
+
+function normalizeFilePath(filePath) {
+  if(filePath[0] != '/') filePath = path.join(process.cwd(), filePath);
+  return filePath;
+}
