@@ -6,6 +6,7 @@ var path = require('path')
   , Transcoder = require('../');
 
 process.argv[0] = path.basename(process.argv[0]);
+
 var cli = require('cli').enable('version').setApp(__dirname + '/../package.json');
 
 cli.parse({
@@ -17,9 +18,7 @@ cli.parse({
 
 cli.main(function (args, options) {
 
-  if(options.config) {
-    config.load(normalizeFilePath(options.config));
-  }
+  if(options.config) config.load(options.config);
 
   Transcoder.configure({redis: config.redis});
   
@@ -43,8 +42,3 @@ cli.main(function (args, options) {
       .start();
   }
 });
-
-function normalizeFilePath(filePath) {
-  if(filePath[0] != '/') filePath = path.join(process.cwd(), filePath);
-  return filePath;
-}
