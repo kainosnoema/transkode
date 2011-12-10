@@ -25,56 +25,28 @@ POST http://localhost:3456/jobs/(image|video)
   }
 , "outputs": [
     {
-      "processors": {
-        "resize": {
-          "width": 400
-        , "height": 200
-        , "strategy": "crop"
-        }
-      , "blur": 10
-      , "quality": 80
-      }
+      "resize": { "to": "400x200", "strategy": "crop" }
+    , "blur": 10
+    , "quality": 80
     , "cloudfiles": {
         "container": "..."
       , "name": "profile_images/new/400.jpg"
       }
-    , "postback": "new-400.jpg"
     }
   , {
-      "processors": {
-        "resize": {
-          "width": 200
-        , "height": 100
-        , "strategy": "crop"
-        }
-      , "quality": 70
-      }
+      "resize": { "to": "200x100", "strategy": "crop" }
+    , "quality": 70
     , "local": "./test/images/new-200.jpg"
-    , "postback": "new-200.jpg"
     }
   , {
-      "processors": {
-        "resize": {
-          "width": 50
-        , "height": 50
-        , "strategy": "crop"
-        }
-      , "quality": 70
-      }
+      "resize": { "to": "50", "strategy": "crop" }
+    , "quality": 70
     , "local": "./test/images/new-50.jpg"
-    , "postback": "new-50.jpg"
     }
   , {
-      "processors": {
-        "resize": {
-          "width": 20
-        , "height": 20
-        , "strategy": "crop"
-        }
-      , "quality": 70
-      }
+      "resize": { "to": "20", "strategy": "crop" }
+    , "quality": 70
     , "local": "./test/images/new-10.jpg"
-    , "postback": "new-10.jpg"
     }
   ]
 , "wait": true
@@ -95,6 +67,7 @@ POST http://localhost:3456/jobs/(image|video)
 "resize": {
   "width": 100
 , "height": 100
+, "to": "100x100"
 , "strategy": [fit|crop|pad|stretch]
 , "zoom": true
 , "gravity": ["center", ...] (when cropping or padding)
