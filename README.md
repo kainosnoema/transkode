@@ -1,4 +1,4 @@
-# node-transkode
+# transkode
 
 Redis-backed (queued) transcoding server for images and video (coming).
 

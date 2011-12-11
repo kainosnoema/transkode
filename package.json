@@ -17,7 +17,7 @@
 , "devDependencies":
   { "vows":       "*" }
 , "repository" :    { "type" :  "git"
-                    , "url" :   "http://github.com/kainosnoema/node-transkode.git" }
+                    , "url" :   "http://github.com/kainosnoema/transkode.git" }
 , "main": "index"
 , "bin": { "transkode": "./bin/transkode.js" }
 , "engines" :       { "node" : ">=0.4.6" }
