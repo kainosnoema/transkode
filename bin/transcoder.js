@@ -22,8 +22,11 @@ cli.main(function (args, options) {
 
   Transcoder.configure({redis: config.redis});
   
-  var cluster = require('cluster');
+  var clusterName = 'transcoder'
+    , cluster = require('cluster');
   cluster = cluster()
+    .set('title', clusterName + ' master')
+    .set('worker title', clusterName + ' {n}')
     .set('workers', options.workers || 4)
     .use(cluster.debug()) 
     .start();
