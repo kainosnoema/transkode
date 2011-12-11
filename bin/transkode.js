@@ -1,5 +1,15 @@
 #!/usr/bin/env node
 
+/*!
+ * transkode
+ * Copyright (c) 2011 Evan Owen <kainosnoema@gmail.com>
+ * MIT Licensed
+ */
+
+/**
+ * Module dependencies.
+ */
+
 var path = require('path')
   , utils = require('../lib/utils')
   , config = require('../lib/config')
