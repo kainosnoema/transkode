@@ -32,7 +32,7 @@ cli.main(function (args, options) {
 
   Transkode.configure({redis: config.redis});
   
-  var clusterName = 'transcoder'
+  var clusterName = 'transkode'
     , cluster = require('cluster');
   cluster = cluster()
     .set('title', clusterName + ' master')
