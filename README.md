@@ -8,7 +8,8 @@ No. This is just an experiment and is NOT production ready.
 
 ## Dependancies
 
-- Redis
+- Node.js v0.4.6+
+- Redis v2.0+
 - GraphicsMagick
 
 ## Proposed Usage
