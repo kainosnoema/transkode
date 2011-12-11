@@ -1,6 +1,6 @@
 # transkode
 
-Redis-backed (queued) transcoding server for images and video (coming).
+Node-powered, Redis-backed (queued) transcoding server for images and video (coming).
 
 ## Is it any good?
 
