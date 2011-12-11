@@ -1,9 +1,9 @@
-{ "name" :  "transcoder"
+{ "name" :  "transkode"
 , "description" : "Image/Video Transcoding Server"
 , "version" : "0.0.4"
 , "author": "Evan Owen <kainosnoema@gmail.com>"
 , "dependencies":
-  { 
+  {
     "express":        "2.5.x"
   , "cluster":        "0.7.x"
   , "redis":          "0.7.x"
@@ -17,8 +17,8 @@
 , "devDependencies":
   { "vows":       "*" }
 , "repository" :    { "type" :  "git"
-                    , "url" :   "http://github.com/kainosnoema/node-transcoder.git" }
+                    , "url" :   "http://github.com/kainosnoema/node-transkode.git" }
 , "main": "index"
-, "bin": { "transcoder": "./bin/transcoder.js" }
+, "bin": { "transkode": "./bin/transkode.js" }
 , "engines" :       { "node" : ">=0.4.6" }
 }

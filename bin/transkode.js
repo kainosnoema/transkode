@@ -3,7 +3,7 @@
 var path = require('path')
   , utils = require('../lib/utils')
   , config = require('../lib/config')
-  , Transcoder = require('../');
+  , Transkode = require('../');
 
 process.argv[0] = path.basename(process.argv[0]);
 
@@ -20,7 +20,7 @@ cli.main(function (args, options) {
 
   if(options.config) config.load(options.config);
 
-  Transcoder.configure({redis: config.redis});
+  Transkode.configure({redis: config.redis});
   
   var clusterName = 'transcoder'
     , cluster = require('cluster');

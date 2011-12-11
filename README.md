@@ -1,4 +1,4 @@
-# node-transcoder
+# node-transkode
 
 Redis-backed (queued) transcoding server for images and video (coming).
 
@@ -15,7 +15,7 @@ No. This is just an experiment and is NOT production ready.
 
 ```` js
 
-POST http://localhost:3456/jobs/(image|video)
+POST http://localhost:4422/jobs/(image|video)
 
 {
   "title": "resize profile pic for user 5432"
