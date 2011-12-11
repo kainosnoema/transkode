@@ -1,1 +1,1 @@
-module.exports = require('./lib/transcoder');
+module.exports = require('./lib/transkode');
