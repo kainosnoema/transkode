@@ -1,6 +1,6 @@
 { "name" :  "transcoder"
 , "description" : "Image/Video Transcoding Server"
-, "version" : "0.0.3"
+, "version" : "0.0.4"
 , "author": "Evan Owen <kainosnoema@gmail.com>"
 , "dependencies":
   { 
