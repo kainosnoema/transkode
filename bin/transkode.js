@@ -29,8 +29,7 @@ cli.parse({
 cli.main(function (args, options) {
 
   if(options.config) config.load(options.config);
-
-  Transkode.configure({redis: config.redis});
+  Transkode.configure(config);
   
   var clusterName = 'transkode'
     , cluster = require('cluster');
