@@ -28,6 +28,8 @@ cli.parse({
 
 cli.main(function (args, options) {
 
+  process.env.NODE_ENV = options.env;
+
   if(options.config) config.load(options.config);
   Transkode.configure(config);
   
