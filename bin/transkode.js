@@ -10,10 +10,7 @@
  * Module dependencies.
  */
 
-var path = require('path')
-  , utils = require('../lib/utils')
-  , config = require('../lib/config')
-  , Transkode = require('../');
+var path = require('path');
 
 process.argv[0] = path.basename(process.argv[0]);
 
@@ -27,8 +24,11 @@ cli.parse({
 }, []);
 
 cli.main(function (args, options) {
+  process.env.NODE_ENV = options.env; // set env first
 
-  process.env.NODE_ENV = options.env;
+  var utils = require('../lib/utils')
+    , config = require('../lib/config')
+    , Transkode = require('../');
 
   if(options.config) config.load(options.config);
   Transkode.configure(config);
