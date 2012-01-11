@@ -32,7 +32,7 @@ cli.main(function (args, options) {
 
   if(options.config) config.load(options.config);
   Transkode.configure(config);
-  
+
   var clusterName = 'transkode'
     , cluster = require('cluster');
   cluster = cluster()

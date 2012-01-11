@@ -10,7 +10,7 @@ No. This is just an experiment and is NOT production ready.
 
 - Node.js v0.4.6+
 - Redis v2.0+
-- GraphicsMagick
+- GraphicsMagick 1.3.12+
 
 ## Proposed Usage
 
