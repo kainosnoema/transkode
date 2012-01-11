@@ -36,11 +36,13 @@ cli.main(function (args, options) {
   var clusterName = 'transkode'
     , cluster = require('cluster');
   cluster = cluster()
-    .set('title', clusterName + ' master')
-    .set('worker title', clusterName + ' {n}')
-    .set('workers', options.workers || 4)
-    .use(cluster.debug()) 
-    .start();
+    .in('development')
+      .use(cluster.debug())
+    .in('all')
+      .set('title', clusterName + ' master')
+      .set('worker title', clusterName + ' {n}')
+      .set('workers', options.workers || 4)
+      .start();
 
   if (cluster.isMaster) {
     var port = options.port
